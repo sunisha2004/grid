@@ -1,0 +1,32 @@
+/* :root{
+    --primary-color:blue;
+    --success-color:green;
+    --danger-colour:red;
+    --maxw:50vw;
+}
+.box1{
+    background-color: var(--success-color);
+    width: var(--maxw);
+}
+.box2{
+    color: var(--danger-colour);
+}
+.box3{
+    background-color: blue;
+/* } ................................ the above codes are given for adding variables */
+
+div ul li p{
+    color: red;
+}
+/* direct child of div select using ">" operator */
+div > p{
+    color: purple;
+}
+/* To select the first sibling of div using "+" */
+div + p{
+    color: green;
+}
+/* To select all the siblings of div using "~" */
+div ~ p{
+    color: blueviolet;
+}
