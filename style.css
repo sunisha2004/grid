@@ -1,0 +1,57 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+a{
+    color: black;
+}
+a[target="_blank"]{
+    background-color: black;
+    color: green;
+}
+a[target="_self"]{
+    background-color: blue;
+    color: red;
+}
+form{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+input{
+    padding: 8px;
+    margin: 3px;
+}
+input[type]{
+    background-color: aqua;
+}
+input[type="text"]{
+    background-color: black;
+}
+input[type="email"]{
+    background-color: green;
+    color: black;
+}
+li:nth-child(3){
+    color:blue
+}
+li:nth-child(odd){
+    color: blueviolet;
+}
+li:nth-child(even){
+    color: chartreuse;
+}
+li:nth-child(2n+0){
+    color: seagreen;
+}
+li:nth-child(3n+3){
+    color:peru;
+}
