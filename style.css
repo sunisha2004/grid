@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    background-color: aqua;
+    padding: 15px;
+}
+.box{
+    background-color: antiquewhite;
+    padding: 25px;
+    width: 10%;
+    animation-name: animation1;
+    animation-duration: 7s;
+    animation-iteration-count: 2;
+    animation-fill-mode: forwards;/* Ends animation with last keyframe value */
+    animation-fill-mode: backwards;/*Ends animation with last keyframe value */
+    animation-timing-function: ease-in;/*starts animations slowly and ends fastly*/
+    animation-timing-function: ease-out;/*starts animations fastly and ends slowy*/
+    animation-timing-function: ease-in;/*starts and ends slowly*/
+    animation-delay: 3s;
+    animation-direction: alternate;/*goes forward*/
+    animation-direction: reverse;/*goes reverse*/
+
+}
+@keyframes animation1{
+    from{
+        width: 10%;
+    }
+    to{
+        width: 100%;
+    }
+}
