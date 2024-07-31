@@ -2,10 +2,16 @@
     margin: 0;
     padding: 0;
 }
+/* }
 .container{
     background-color: aqua;
     padding: 15px;
-}
+    width: 800px;
+    height: 500px;
+    margin: 30px auto 30px auto;
+    position: relative;
+} */
+/* }
 .box{
     background-color: antiquewhite;
     padding: 25px;
@@ -14,20 +20,99 @@
     animation-duration: 7s;
     animation-iteration-count: 2;
     animation-fill-mode: forwards;/* Ends animation with last keyframe value */
-    animation-fill-mode: backwards;/*Ends animation with last keyframe value */
-    animation-timing-function: ease-in;/*starts animations slowly and ends fastly*/
-    animation-timing-function: ease-out;/*starts animations fastly and ends slowy*/
-    animation-timing-function: ease-in;/*starts and ends slowly*/
-    animation-delay: 3s;
-    animation-direction: alternate;/*goes forward*/
-    animation-direction: reverse;/*goes reverse*/
+    /* animation-fill-mode: backwards;Ends animation with last keyframe value */
+    /* animation-timing-function: ease-in;starts animations slowly and ends fastly */
+    /* animation-timing-function: ease-out;starts animations fastly and ends slowy */
+    /* animation-timing-function: ease-in;starts and ends slowly */
+    /* animation-delay: 3s; */
+    /* animation-direction: alternate;goes forward */
+    /* animation-direction: reverse;goes reverse */
 
-}
-@keyframes animation1{
-    from{
+/* } */
+/* @keyframes animation1{
+    from{        
+
         width: 10%;
     }
     to{
         width: 100%;
+    } */
+/* } */
+/* .box{
+    position: absolute;
+    background-color:antiquewhite ;
+    height: 200px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation-name: animation2;
+    animation-duration: 7s;
+    animation-iteration-count: 5;
+}
+@keyframes animation2{
+    0% {
+        top: 0px;
+        left: 0px;
     }
+    25% {
+        top: 330px;
+        left: 0px;
+    }
+    50% {
+        top: 330px;
+        left: 630px;
+    }
+    75% {
+        top: 0px;
+        left: 630px;
+    }
+    100% {
+        top: 0px;
+        left: 0px;
+    }
+} */
+.container{
+    background-color: aqua;
+    padding: 5px;
+    width: 80vw;
+    height: 50vh;
+    margin: 30px auto 30px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.box{
+    background-color: antiquewhite;
+    height: 200px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+/* 
+    transition-property: background-color;
+    transition-duration: 5s;
+    transition-timing-function: ease-in;
+    transition-timing-function: ease-out;
+    transition-delay: 1s;
+    transition-property: all;
+} */
+transition: all 3s ease-in-out;
+}
+.box:hover{
+   /* background-color: red;
+   width: 100%;
+   height: 100%; */
+   transform: rotate(45deg);
+   transform: rotate(180deg);
+   transform: skew(40deg);
+   transform: skew(-40deg);
+   transform: scale(2);
+   transform: scale(-2);
+   transform: translateX(125px);
+   transform: translateY(-125px);
+   transform: translateX(125px);
+   transform: translateY(-125px);
+   transform: translate(125px,125px);
+
 }
