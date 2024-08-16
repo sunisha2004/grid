@@ -50,19 +50,87 @@ console.log("result2:",result2);
     //console.log("services :",services);
 }
 
-{
-    //event handler
-    console.log("\n\n\n\n\n");
+// {
+//     //event handler
+//     console.log("\n\n\n\n\n");
 
-    let btn = document.getElementById('btn');
-    console.log("btn :", btn);
+//     let btn = document.getElementById('btn');
+//     console.log("btn :", btn);
 
-    let inp = document.getElementById('inp');
-    console.log("inp:",inp);
+//     let inp = document.getElementById('inp');
+//     console.log("inp:",inp);
 
-    btn.addEventListener('click', function() {
-        console.log("Button clicked..");
-    });
+//     btn.addEventListener('click', function() {
+//         console.log("Button clicked..");
+//     });
 
     
+// }
+
+
+{
+    //math functions
+
+    console.log("\n\n\n\n");
+
+    console.log(Math.sqrt(25)); //squareroot of 25
+    console.log(Math.round(14.5));//round value of 14.5
+    console.log(Math.ceil(12.5));//give next value 
+    console.log(Math.floor(10.7));// doesn't consider the decimel
+
+
+}
+
+{
+    console.log("\n\n\n\n");
+    //timer functions
+
+    // setTimeout(function () {
+    //     console.log("from setTimeout");
+    // });
+
+    // setInterval(function (){
+    //     console.log("from setInterval")
+    // })
+}
+
+// {
+//     function counter(currentvalue, limit) {
+//         if(currentvalue > limit) {
+//             return;
+//         }
+//         console.log(currentvalue);
+
+//         //counter(++currentvalue,limit); //recursive call
+//         setTimeout(()=> counter(++currentvalue,limit),2000)
+
+//     }
+//     counter(0,10);
+// }
+
+{
+    //program to show currrent time
+    function putZero(sec){
+        return sec<10? "0"+sec:sec;
+    }
+
+    function show() {
+        var time = document.getElementById('time');
+        var dt = new Date();
+        var hours = dt.getHours();
+        // if(hours > 12){
+        //     ampm = "pm";
+        // }else{
+        //     ampm = "am";
+        // }
+        var ampm = hours>12?"pm":"am";
+
+        time.innerHTML = putZero(hours%12)+ ":" + putZero(dt.getMinutes())+ ":" + putZero(dt.getSeconds()) +ampm;
+
+        setTimeout(function () {
+            show();
+        },1000);
+
+    }
+    show();
 }
