@@ -352,5 +352,37 @@ console.log("object1 :",obj1);
 {
     console.log("\n\n\n\n");
 
-    // function animal()
+     function animal(herbivores, carnivores, omnivores) {
+        this.herbivores = herbivores;
+        this.carnivores = carnivores;
+        this.omnivores = omnivores;
+        this.character = function() {
+            console.log(` ${this.herbivores} is a herbivores , ${this.carnivores} is a carnivores and ${this.omnivores} is an omnivores `);
+        }
+     }
+     let Animal = new animal("cow","Lion","Bear");
+    // console.log("Animals : ",animal);
+     Animal.character();
+
+     let Animal1 = new animal ("Goat","Tiger","Human");
+     console.log("Animal 1: ",Animal1);
+     Animal1.character();
+
+     console.log("\n\n\n\n");
+
+     function vehicle (car,Bike,Bus) {
+        this.car = car;
+        this.Bike = Bike;
+        this.Bus = Bus;
+        this.type = function(){
+            console.log(`${this.car} is a car model and ${this.Bike} is a Bike model`);
+
+        }
+     }
+     let Vehicle = new vehicle("Toyota RAV4","Hero","Ashok Leyland");
+     Vehicle.type();
+     
+     let vehicle1 = new vehicle("Maruti","R15","Bharath benz");
+     Vehicle.type();
+     
 }
