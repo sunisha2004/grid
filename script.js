@@ -274,3 +274,83 @@ console.log("object1 :",obj1);
      },0);
      console.log("sum :",sum);
 }
+
+{
+    console.log("\n\n\n\n");
+    console.log("this : ",this);//global variable
+
+    let obj = {
+        name : "jan",
+        age : 40,
+        getAge : function () {
+            console.log("This : ",this);
+            console.log("Age : ",this.age);
+        }
+    }
+
+    obj.getAge();
+
+    console.log("\n\n\n\n");
+
+    function Greeting(message1, message2) {
+
+        console.log("message 1 : ",message1);
+        console.log("message 2 : ",message2);
+
+        console.log("this : ",this);
+        console.log("This.name : ",this.name);
+        console.log("this.age : ",this.age);
+
+      
+    }
+    //Greeting("hello","haiii");
+   // Greeting.call(obj,"helloo","haiii");
+   //Greeting.apply(obj,["Heloo","haiii"]);
+
+   let bindedFunction = Greeting.bind(obj,"hello","haiii");
+    console.log("bindedFunction : ",bindedFunction);
+    bindedFunction();
+
+    console.log("\n\n\n\n");
+    //constructor Function
+
+    function Person(name, age, mark) {
+
+        this.name = name;
+        this.age = age;
+        this.mark = mark;
+        this.greeting = function() {
+            console.log(`Hello ${this.name}, You are ${this.age} Years old.....`);
+
+        }
+    }
+    let person = new Person("john",16,45);
+    console.log("person : ",Person);
+    person.greeting();
+
+    let person1 = new Person ("jane",30,100);
+    console.log("person 1 : ",person1);
+    person1.greeting();
+
+    person1.city = "EKM";
+    person1.getAge = function() {
+        console.log(`Haii..${this.name},your age is ${this.age}`);
+
+    }
+    person1.getAge();
+
+    Person.prototype.getMark = function() {
+        console.log(`Hii...${this.name} your mark is ${this.mark}`);
+
+    }
+    person.getMark()
+    person1.getMark();
+
+
+
+}
+{
+    console.log("\n\n\n\n");
+
+    // function animal()
+}
