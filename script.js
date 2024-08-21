@@ -386,3 +386,167 @@ console.log("object1 :",obj1);
      Vehicle.type();
      
 }
+
+
+{
+    console.log("\n\n\n\n\n\n\n");
+
+    class person {
+        name;
+        age;
+        mark;
+
+        constructor(name,age,mark){
+            this.name = name;
+            this.age = age;
+            this.mark = mark;
+
+        }
+
+        greeting() {
+            console.log(`Hello ${this.name} , you are ${this.age} years old..!!`);
+
+        }
+
+    }
+    let person1 = new person ("David",28,75);
+    console.log("Person 1:",person1);
+    person1.greeting();
+
+let person2 = new person ("saji",25,75);
+    console.log("Person 1:",person2);
+    person2.greeting();
+
+}
+
+{
+    console.log("\n\n\n\n\n");
+    class animal {
+        herbivores;
+        carnivores;
+        omnivores;
+
+        constructor(herbivores, carnivores, omnivores){
+        this.herbivores = herbivores;
+        this.carnivores = carnivores;
+        this.omnivores = omnivores;
+
+        }
+        character(){
+            console.log(` ${this.herbivores} is a herbivores , ${this.carnivores} is a carnivores and ${this.omnivores} is an omnivores `);
+
+        }
+        
+    }
+    let animal1 = new animal("cow","lion","bear");
+    console.log("Animal 1:",animal1);
+    animal1.character();
+}
+
+{
+
+    console.log("\n\n\n\n\n");
+
+    class Animal {
+        name;
+
+        constructor(name) {
+            this.name = name;
+        }
+        walking() {
+            console.log(`An animal named ${this.name} is walking!!!`);
+
+        }
+    }
+
+    let monkey = new Animal("monkey");
+    console.log("Monkey :",monkey);
+    monkey.walking();
+
+    class Dog extends Animal{
+        nickname;
+
+        constructor(name,nickname){
+            super(name); //calls parents constructor function
+            this.nickname = nickname;
+        }
+        running(){
+            console.log(` ${this.nickname} is runningg..`);
+        }
+
+        //method overriding
+        walking(){
+            console.log(`${this.name} is walking fastlyy..`);
+        }
+
+    }
+
+    let tom = new Dog("tom","tomy");
+    console.log("tom : ",tom);
+    tom.walking();
+    tom.running();
+
+
+
+}
+
+
+{
+    console.log("\n\n\n\n\n\n");
+
+    //without setter and getter
+
+    class car {
+        name;
+        color ;
+
+        constructor(name){
+            this.name = name;
+
+        }
+        setColor(color) {
+            this.color =color;
+        }
+        getColor(){
+            return this.color;
+        }
+    }
+
+    let car1 =new car("BMW");
+    console.log("Car 1: ",car1);
+    
+    car1.setColor("black");
+    console.log("Car 1:", car1);
+
+    console.log("COlor : ",car1.getColor());
+}
+
+{
+    console.log("\n\n\n\n\n\n");
+
+    //with setter and getter
+
+    class car {
+        name;
+        color ;
+
+        constructor(name){
+            this.name = name;
+
+        }
+        set color(color) {
+            this.color =color;
+        }
+        get color(){
+            return this.color;
+        }
+    }
+
+    let car1 =new car("BMW");
+    console.log("Car 1: ",car1);
+    
+    car1.color = "red";
+    console.log("Car 1:", car1);
+
+    console.log("COlor : ",car1.color);
+}
