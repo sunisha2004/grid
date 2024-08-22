@@ -550,3 +550,124 @@ let person2 = new person ("saji",25,75);
 
     console.log("COlor : ",car1.color);
 }
+
+{
+    console.log("\n\n\n\n\n\n\n");
+
+    class Button {
+        button;
+
+        constructor(content){
+            this.button = document.createElement('button')
+            this.button.innerHTML = content;
+            document.body.appendChild(this.button);
+        }
+        set width(width){
+            this.button.style.width = width + "px";
+        }
+        set height(height){
+            this.button.style.height = height + "px";
+        }
+        get width(){
+            return this.button.style.width;
+        }
+        get height() {
+            return this.button.style.height;
+        }
+        onClick(fn) {
+            this.button.onclick = fn;
+        }
+        
+    }
+    let btn = new Button('click here');
+    console.log("btn : ",btn);
+
+    btn.width = 200
+    btn.height = 100
+
+    console.log("width : ",btn.width);
+    console.log("height : ",btn.height);
+
+    btn.onClick(function (){
+        console.log("button clickedd...");
+    })
+
+    class orangeButton extends Button {
+        // method overriding
+        onClick(fn) {
+            this.button.onclick = function () {
+                this.button.style.background = "orange";
+                fn();
+
+            }.bind(this);
+        }
+    }
+    let OrangeButton = new orangeButton ("click here");
+
+    OrangeButton.onClick(function () {
+        console.log("orange button clicked..");
+    })
+
+    
+}
+
+{
+    console.log("\n\n\n\n\n\n");
+    class Paragraph {
+        paragraph;
+
+        constructor(content){
+            this.paragraph = document.createElement('p')
+            this.paragraph.innerHTML = content;
+            document.body.appendChild(this.paragraph);
+        }
+        set margin(margin){
+            this.paragraph.style.margin = margin + "px";
+        }
+        set padding(padding){
+            this.paragraph.style.padding = padding + "px";
+        }
+        set lineheight(lineheight){
+            this.paragraph.style.lineHeight = lineheight +"px"
+        }
+        get margin(){
+            return this.paragraph.style.margin;
+        }
+        get padding(){
+            return this.paragraph.style.padding;
+        }
+        get lineheight(){
+            return this.paragraph.style.lineHeight
+        }
+       mouseover(fn){
+        this.paragraph.onmouseover = fn;
+       }
+    }
+    let para = new Paragraph("Today is Thursday...now we are studying Mern stack...");
+    console.log("paragraph: ", para);
+
+    para.margin = 100 
+    para.padding = 200
+    para.lineheight=10
+
+    console.log("Margin : ",para.margin);
+    console.log("padding : ",para.padding);
+    console.log("Line Height : ",para.lineheight);
+
+    para.mouseover(function (){
+        console.log("mouse overed..");
+    })
+
+    class childpara extends Paragraph {
+        mouseover(fn){
+            this.paragraph,this.mouseover = function () {
+                this.paragraph.style.background = "yellow";
+                fn();
+            }.bind(this);
+    }
+}
+let Childpara = new childpara("iam a new baby");
+Childpara.mouseover(function(){
+    console.log("iam workingg...");
+}) 
+}
