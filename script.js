@@ -1,4 +1,4 @@
-const str1 = "today was a beautiful day";
+ const str1 = "today was a beautiful day";
 const str2 = "rama killed ravana";
 const str3 = "ravana killed by rama";
 const str4 =`
@@ -75,6 +75,83 @@ const regexp16 = /rama.*$/i;//
 const result16 = regexp16.test(str3); //it matches rama,ramas,..since due to '*' multiple character are matched 
 console.log("Result 16:",result16);//true
 
+const str5 = "Hello";
 
+const regexp17 = /[kjm]/i;
+const result17 = regexp17.test(str5);//if there is a 'k' or 'j' or 'm' then it will be true
+console.log("Result 17:",result17);//false
+
+const regexp18 = /[^kjm]/i;
+const result18 = regexp18.test(str5);//if there is no 'k' or 'j' or 'm' it will be true
+console.log("Result 18:",result18);//true
+
+const regexp19 = /[H+]/i;//Atleast one "H" is required
+const result19 = regexp19.test(str5);
+console.log("Result19:",result19); //True
+
+const regexp20 = /o$/i; //string ends with 'o'
+const result20 = regexp20.test(str5);
+console.log("Result 20 :",result20); //True
+
+const regexp21 = /o?$/i; // 'o' in string is optional
+const result21 = regexp21.test(str5);
+console.log("Result 21:",result21); //True
+
+const regexp22 = /o+$/i; // Atleast one 'o' is required in the string ending
+const result22 = regexp22.test(str5);
+console.log("Result 22:",result22); //True
+
+
+//{} - indicates the numbeer of characters, a{2} means "aa",ie 2a is required
+const regexp23 =/L{2}o$/i;
+const result23 = regexp23.test(str5); // 'o' should be exactly after 2 L's
+console.log("Result 23:",result23); //True
+
+const regexp24 = /L{2,4}o$/i; // o should be exactly after between 2 to 4 L's
+const result24 = regexp24.test(str5);
+console.log("Result 24:",result24) //True
+
+const regexp25 = /HeL{2,4}o$/i; // o should be exactly after between 2 to 4 L's and 'o' is required
+const result25 = regexp25.test(str5);
+console.log("Result 25:",result25) //True
+
+const regexp26 = /HeL{2,}o$/i; // 2 or more 'L' is required
+const result26 = regexp26.test(str5);
+console.log("Result 26:",result26) //True
+
+// \ - indicates escape character,used for matching any characters,which has special meaning
+const regexp27 = /\d/i; //if there is any digits,it will be true,else it will be false
+const result27 = regexp27.test(str5);
+console.log("Result 27 :",result27) //false
+
+const regexp28 = /\D/i;
+const result28 = regexp28.test(str5);
+console.log("Result 28:",result28);
+
+
+const regexp29 = /./i;
+const result29 = regexp29.test(str5);
+console.log("Result 29:",result29);
+
+const regexp30 = /\./i;
+const result30 = regexp30.test(str5);
+console.log("Result 30: ",result30)
+
+function date(){
+let value = document.getElementById('date').value;
+const regexp31 = /^\d{1,2}-\d{1,2}-\d{4}$/i && /^([012]?\d|3[01])-([0]\d|[1][012])-(\d{4})$/i;
+
+const result31= regexp31.test(value);
+if(result31){
+    document.getElementById('result').innerHTML="valid"
+    document.getElementById('result').style.color="green";
+   
+    
+}else{
+    document.getElementById('result').innerHTML="invalid";
+    document.getElementById('result').style.color="red";
+    
+}
+}
 
 
